@@ -70,15 +70,15 @@ data$lifexp.z<-scale(log(data$lfexp_2015),scale =F)
 ## Random Intercept Model --------------------------------------------------------------------------------------------------------
 
 #random intercept model (Level 2: country)
-model.null<-lmer(ach~1+(1|cntry),REML =FALSE, data = data)
-summary(model.null)
-confint(model.null)
+model.c.null<-lmer(ach~1+(1|cntry),REML =FALSE, data = data)
+summary(model.c.null)
+confint(model.c.null)
 
 
 #random intercept model (Level 2: Regions-Nuts1)
-model.null<-lmer(ach~1+(1|nuts1),REML =FALSE, data = data)
-summary(model.null)
-confint(model.null)
+model.n.null<-lmer(ach~1+(1|nuts1),REML =FALSE, data = data)
+summary(model.n.null)
+confint(model.n.null)
 
 #calculating ICC
 ICC(outcome ="ach", group = "country", data = data)
@@ -88,9 +88,9 @@ ICC(outcome ="ach", group = "country", data = data)
 ## Model with level 1 predictors (Level 2: country) ----------------------------------------------------------------------------
 
 #achievement
-model.1<-lmer(impfun~1+gender.z+age.z+eduyrs.z+child.z+popdens.z+gdp.z+(1|cntry),REML = FALSE, data = data)
-summary(model.1)
-confint(model.1)
+model.ach.1<-lmer(impfun~1+gender.z+age.z+eduyrs.z+child.z+popdens.z+gdp.z+(1|cntry),REML = FALSE, data = data)
+summary(model.ach.1)
+confint(model.ach.1)
 
 
 #other variables
@@ -102,57 +102,54 @@ data$swls<-mean(c(data$stflife,data$happy))
 data$sec<-mean(c(data$impsafe,data$imptrad))
 
 # Satisfaction with Life Scale
-model.1<-lmer(swls~1+gender.z+age.z+eduyrs.z+child.z+popdens.z+gdp.z+(1|cntry),REML = FALSE, data = data)
-summary(model.1)
-confint(model.1)
+model.swls.1<-lmer(swls~1+gender.z+age.z+eduyrs.z+child.z+popdens.z+gdp.z+(1|cntry),REML = FALSE, data = data)
+summary(model.swls.1)
+confint(model.swls.1)
 
 #security
-model.1<-lmer(sec~1+gender.z+age.z+eduyrs.z+child.z+popdens.z+gdp.z+(1|cntry),REML = FALSE, data = data)
-summary(model.1)
-confint(model.1)
+model.sec.1<-lmer(sec~1+gender.z+age.z+eduyrs.z+child.z+popdens.z+gdp.z+(1|cntry),REML = FALSE, data = data)
+summary(model.sec.1)
+confint(model.sec.1)
 
 #impfun
-model.1<-lmer(impfun~1+gender.z+age.z+eduyrs.z+child.z+popdens.z+gdp.z+(1|cntry),REML = FALSE, data = data)
-summary(model.1)
-confint(model.1)
+model.impfun<-lmer(impfun~1+gender.z+age.z+eduyrs.z+child.z+popdens.z+gdp.z+(1|cntry),REML = FALSE, data = data)
+summary(model.impfun.1)
+confint(model.impfun.1)
 
-#impfun
-model.1<-lmer(impfun~1+gender.z+age.z+eduyrs.z+child.z+popdens.z+gdp.z+(1|cntry),REML = FALSE, data = data)
-summary(model.1)
-confint(model.1)
 
 
 #model with level 1 predictors (Level 2: nuts1) --------------------------------------------------------------------------------
 #achievement
-model.1<-lmer(impfun~1+gender.z+age.z+eduyrs.z+child.z+popdens.z+gdp.z+(1|nuts1),REML = FALSE, data = data)
-summary(model.1)
-confint(model.1)
+model.ach.n1<-lmer(impfun~1+gender.z+age.z+eduyrs.z+child.z+popdens.z+gdp.z+(1|nuts1),REML = FALSE, data = data)
+summary(model.ach.n1)
+confint(model.ach.n1)
 
 
 
 ## Model with level 2 predictors (Level 2: country) ----------------------------------------------------------------------------
 
-model.1<-lmer(stflife~1+gender.z+age.z+eduyrs.z+child.z+popdens.z+gdp.z+popdens.z*ipshabt+(1|nuts1),REML = FALSE, data = data)
-summary(model.1)
-confint(model.1)
+model.ach.c2<-lmer(ach~1+gender.z+age.z+eduyrs.z+child.z+popdens.z+gdp.z+popdens.z*ipshabt+(1|nuts1),REML = FALSE, data = data)
+summary(model.ach.c2)
+confint(model.ach.c2)
 
-model.1<-lmer(stflife~1+gender.z+age.z+eduyrs.z+child.z+popdens.z+gdp.z+popdens.z*ipshabt+(1|nuts1),REML = FALSE, data = data)
-summary(model.1)
-confint(model.1)
+model.swls.c2<-lmer(swls~1+gender.z+age.z+eduyrs.z+child.z+popdens.z+gdp.z+popdens.z*ipshabt+(1|nuts1),REML = FALSE, data = data)
+summary(model.swls.c2)
+confint(model.swls.c2)
 
-model.1<-lmer(stflife~1+gender.z+age.z+eduyrs.z+child.z+popdens.z+gdp.z+popdens.z*ipshabt+(1|nuts1),REML = FALSE, data = data)
-summary(model.1)
-confint(model.1)
+model.sec.c2<-lmer(sec~1+gender.z+age.z+eduyrs.z+child.z+popdens.z+gdp.z+popdens.z*ipshabt+(1|nuts1),REML = FALSE, data = data)
+summary(model.sec.c2)
+confint(model.sec.c2)
+
 
 ## Model with level 2 predictors (Level 2: Nuts 1 region) ----------------------------------------------------------------------
 
-model.1<-lmer(impdiff~1+gender.z+age.z+eduyrs.z+child.z+popdens.z+gdp.z+longunemp.z+(1|nuts1),REML = FALSE, data = data)
-summary(model.1)
-confint(model.1)
+model.ach.n2<-lmer(ach~1+gender.z+age.z+eduyrs.z+child.z+popdens.z+gdp.z+longunemp.z+(1|nuts1),REML = FALSE, data = data)
+summary(model.ach.n2)
+confint(model.ach.n2)
 
-model.1<-lmer(ipadvnt~1+gender.z+age.z+eduyrs.z+child.z+popdens.z+gdp.z+longunemp.z+popgrow.z+(1|nuts1),REML = FALSE, data = data)
-summary(model.1)
-confint(model.1)
+model.swls.n2<-lmer(swls~1+gender.z+age.z+eduyrs.z+child.z+popdens.z+gdp.z+longunemp.z+popgrow.z+(1|nuts1),REML = FALSE, data = data)
+summary(model.swls.n2)
+confint(model.swls.n2)
 
 
 
@@ -163,34 +160,24 @@ confint(model.1)
 
 
 
-#impfun
-model.1<-lmer(impfun~1+gender.z+age.z+eduyrs.z+child.z+popdens.z+gdp.z+(1|nuts1),REML = FALSE, data = data)
-summary(model.1)
-confint(model.1)
+#impfun - important to be fun
+modele1<-lmer(impfun~1+gender.z+age.z+eduyrs.z+child.z+popdens.z+gdp.z+(1|cntry),REML = FALSE, data = data)
+summary(modele1)
+confint(modele1)
 
-#ipgdtim
-model.1<-lmer(ipgdtim~1+gender.z+age.z+eduyrs.z+child.z+popdens.z+gdp.z+unemp.z+(1|nuts1),REML = FALSE, data = data)
-summary(model.1)
-confint(model.1)
-
-#ipadvnt
-model.1<-lmer(ipadvnt~1+gender.z+age.z+eduyrs.z+child.z+popdens.z+popsz.z+gdp.z+unemp.z+(1|nuts1),REML = FALSE, data = data)
-summary(model.1)
-confint(model.1)
-
-#iprspot
-model.1<-lmer(iprspot~1+gender.z+age.z+eduyrs.z+child.z+popdens.z+gdp.z+unemp.z+(1|nuts1),REML = FALSE, data = data)
-summary(model.1)
-confint(model.1)
+#ipadvnt - important for adventure
+modele2<-lmer(ipadvnt~1+gender.z+age.z+eduyrs.z+child.z+popdens.z+popsz.z+gdp.z+unemp.z+(1|cntry),REML = FALSE, data = data)
+summary(modele2)
+confint(modele2)
 
 #impdiff
-model.1<-lmer(impdiff~1+gender.z+age.z+eduyrs.z+child.z+popdens.z+gdp.z+unemp.z+(1|nuts1),REML = FALSE, data = data)
-summary(model.1)
-confint(model.1)
+modele3<-lmer(impdiff~1+gender.z+age.z+eduyrs.z+child.z+popdens.z+gdp.z+unemp.z+(1|cntry),REML = FALSE, data = data)
+summary(modele3)
+confint(modele3)
 
 #ipcrtiv
-model.1<-lmer(impdiff~1+gender.z+age.z+eduyrs.z+child.z+popdens.z+gdp.z+unemp.z+(1|nuts1),REML = FALSE, data = data)
-summary(model.1)
-confint(model.1)
+modele4<-lmer(impdiff~1+gender.z+age.z+eduyrs.z+child.z+popdens.z+gdp.z+unemp.z+(1|cntry),REML = FALSE, data = data)
+summary(modele4)
+confint(modele4)
 
 
