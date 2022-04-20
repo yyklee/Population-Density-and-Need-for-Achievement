@@ -7,7 +7,7 @@ Individuals living in densely populated regions are likely to face higher levels
 1. [abstract.pdf](https://github.com/yyklee/Population-Density-and-Need-for-Achievement/blob/main/density_achievement_abstract.pdf): Research abstract 
 2. [ess_wave8_country_level.csv](https://github.com/yyklee/Population-Density-and-Need-for-Achievement/blob/main/ess_wave8_country_level.csv): Country level data of European Social Survey (ess wave8)
 3. [ess.R](https://github.com/yyklee/Population-Density-and-Need-for-Achievement/blob/main/ess.R): R syntax for this study
-4. [ess.sql](): Cleaning ess_wave7 data
+4. [ess.sql](https://github.com/yyklee/Population-Density-and-Need-for-Achievement/blob/main/ess_clean.sql): Cleaning ess_wave7 data
 
 ## Statistical Method used:
 1. Multi-level modeling
