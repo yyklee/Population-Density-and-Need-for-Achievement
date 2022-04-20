@@ -5,10 +5,10 @@ Individuals living in densely populated regions are likely to face higher levels
 
 ## This repository includes:
 1. [achv_abstract_summary.pdf](https://github.com/yyklee/Population-Density-and-Need-for-Achievement/blob/main/achv_abstract_summary.pdf): Research abstract/summary of results
-2. [achv_abstract_summary.pdf](): Report on research methods(data collection, data analysis) and implication for pre-analysis
-3. [ess_wave8_country_level.csv](https://github.com/yyklee/Population-Density-and-Need-for-Achievement/blob/main/ess_wave8_country_level.csv): Country level data of European Social Survey (ess wave8)
+2. [achv_report_pre.pdf](https://github.com/yyklee/Population-Density-and-Need-for-Achievement/blob/main/achv_report_pre.pdf): Report research background, methods(data collection, data analysis) and implications
+3. [achv_cleaning.sql](https://github.com/yyklee/Population-Density-and-Need-for-Achievement/blob/main/achv_cleaning.sql): (Practice) Cleaning ess_wave8 data with SQL
 4. [ach_syntax.R](https://github.com/yyklee/Population-Density-and-Need-for-Achievement/blob/main/achv_syntax.R): R syntax for this study
-5. [ess.sql](https://github.com/yyklee/Population-Density-and-Need-for-Achievement/blob/main/ess_clean.sql): (Practice) Cleaning ess_wave8 data with SQL
+5. [ess_wave8_country_level.csv](https://github.com/yyklee/Population-Density-and-Need-for-Achievement/blob/main/ess_wave8_country_level.csv): Country level data of European Social Survey (ess wave8)
 
 ## Statistical Method used:
 1. Multi-level modeling
