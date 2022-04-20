@@ -14,4 +14,4 @@ Individuals living in densely populated regions are likely to face higher levels
 1. Multi-level modeling
 2. Intraclass Correlation Coefficient
 
-*Data from [European Social Survey](https://www.europeansocialsurvey.org/) (smaller regional level data also available)*
+*Data from [European Social Survey](https://www.europeansocialsurvey.org/) and [World Bank Open Data](https://data.worldbank.org/) *
