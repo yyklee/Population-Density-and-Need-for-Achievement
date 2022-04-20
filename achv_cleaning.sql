@@ -20,12 +20,19 @@ SELECT count(*) FROM Europe
 WHERE ipshabt IS NULL OR ipshabt = 9; -- 9: "no answer" 
 
 
+-- key variables: iprspt (respect)
+SELECT count(*) FROM Europe
+WHERE iprspt IS NULL OR iprspt = 9; -- 9: "no answer" 
+
 -- no answer (9) to null
 
-SELECT IF(ipsuces = 9, NULL, ipsuces) as ipsucesr
+SELECT IF(ipsuces = 9, NULL, ipsuces) as pres1
 FROM Europe;
 
-SELECT IF(ipshabt = 9, NULL, ipshabt) as ipshabtr
+SELECT IF(ipshabt = 9, NULL, ipshabt) as pres2
+FROM Europe
+
+SELECT IF(iprspt = 9, NULL, iprspt) as pres3
 FROM Europe;
 
 
