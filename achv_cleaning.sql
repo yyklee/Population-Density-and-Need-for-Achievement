@@ -105,20 +105,12 @@ WITH u_Europe AS(
 Select *,
 	ROW_NUMBER() OVER (
 	PARTITION BY ID,
-				 gndr,
-				 age,
-				 chld,
-                 eduyrs
-				 ORDER BY 
-                 ID,
-                 gndr,
-				 age,
-				 chld,
-                 eduyrs
-					) AS row_num
-
+		     gndr,
+		     age,
+		     chld,
+                     eduyrs
+	       ORDER BY ID, gndr,age,chld, eduyrs) AS row_num
 FROM Europe
-
 )
 SELECT *
 FROM u_Europe
@@ -135,7 +127,6 @@ From Europe;
 
 
 ALTER TABLE Europe
-DROP COLUMN nuts1,
 DROP COLUMN nuts2;
 
 
