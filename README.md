@@ -5,8 +5,8 @@ Individuals living in densely populated regions are likely to face higher levels
 
 ## This repository includes:
 1. [abstract.pdf](): 
-2. [ESS_WAVE8_data.csv]():
-3. [ess.R]():
+2. [ess_wave8_country_level.csv](https://github.com/yyklee/Population-Density-and-Need-for-Achievement/blob/main/ess_wave8_country_level.csv):
+3. [ess.R](https://github.com/yyklee/Population-Density-and-Need-for-Achievement/blob/main/ess.R):
 4. [ess.sql]():
 
 ## Statistical Method used:
